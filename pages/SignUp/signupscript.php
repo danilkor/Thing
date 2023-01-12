@@ -54,4 +54,4 @@
     $connect->close();
 
     $_SESSION['valid_feedback'] = '<div class="row mb-4"><div class="col-lg-4 col-md-4 col-sm-3"></div><div class="alert alert-success col-lg-4 col-sm-6 col-md-4 text-center" role="alert">Successfully signed up!<br> <strong>Log in</strong> to your account now</div><div class="col-lg-4 col-md-4 col-sm-3"></div></div>';
-    header('refresh: 5;Location: ../Login/login.php');
+    header('Location: ../Login/login.php');
