@@ -26,6 +26,12 @@
 
     <div class="container-fluid">
         <?php require_once("../../scripts/header.php")?>
+        <?php
+                    if(isset($_SESSION['invalid_feedback'])){
+                        echo $_SESSION['invalid_feedback'];
+                        unset($_SESSION['invalid_feedback']);
+                    }
+                ?>
         <h1 class="w-100 text-center">Sign-up</h1>
         <div class="row">
             <div class="col-lg-4 col-md-4 col-sm-3"></div>
@@ -60,12 +66,7 @@
                 <div class="invalid-feedback">Confirm the password</div>
 
                 <div class="row mt-2 p-3 flex-nowrap"><button type="submit" class="btn btn-primary col-3">Sign-up</button><div class="col"></div><span class="alert col-8 align-self-center mb-0 py-2 pl-4 text-center">Already have an account? <a href="../Login/login.php"class="alert-link text-decoration-none">Login</a></span></div>
-                <?php
-                    if(isset($_SESSION['invalid_feedback'])){
-                        echo $_SESSION['invalid_feedback'];
-                        unset($_SESSION['invalid_feedback']);
-                    }
-                ?>
+                
                 
             </form>
             <div class="col-lg-4 col-md-4 col-sm-3"></div>
