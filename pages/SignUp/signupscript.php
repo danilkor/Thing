@@ -5,7 +5,7 @@
 
     include_once('../../scripts/connect.php');
     function error($text){
-        $_SESSION['invalid_feedback'] = '<div class="alert alert-danger mt-3" role="alert">' . $text . '</div>';
+        $_SESSION['invalid_feedback'] = '<div class="row mb-4"><div class="col-lg-4 col-md-4 col-sm-3"></div><div class="alert alert-danger mt-3 col-lg-4 col-sm-6 col-md-4 text-center" role="alert">' . $text . '</div><div class="col-lg-4 col-md-4 col-sm-3"></div></div>';
     }
 
     $username = ($_POST['username']);
@@ -23,7 +23,7 @@
     }
 
     if(mb_strlen($username) < 5 || mb_strlen($username) > 90 || preg_match("/[^a-zA-Z0-9\-_]+/", $username)){
-        error("<b>Username</b> must contain from 5 to 90 characters and can only contain <b>a-z</b>, <b>A-Z</b>, <b>0-9</b>, <b>-</b>, <b>_</b>");
+        error("<b>Username</b> must contain <b>from 5 to 90</b> characters and can only contain <b>a-z</b>, <b>A-Z</b>, <b>0-9</b>, <b>-</b>, <b>_</b>!");
         header('Location: signup.php');
         exit();
     }
