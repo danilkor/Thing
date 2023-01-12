@@ -59,6 +59,7 @@
 
                 <label for="password" class="form-label">Password</label>
                 <input id="password" type="password" class="form-control mb-3 has-validation" name="password" value="<?php if(isset($_POST['password'])){echo($_POST['password']);}?>" required>
+                <div class="form-text mb-3">*Do not use your bank card password. <b>We</b> worked on site security ;)</div>
                 <div class="invalid-feedback">Password is required</div>
 
                 <label for="confPassword" class="form-label">Confirm Password</label>
