@@ -1,5 +1,5 @@
 <?php
-
+session_start();
     $pageName = "Login";
 
 ?>
@@ -36,10 +36,10 @@
             <div class="col-lg-4 col-md-4 col-sm-3"></div>
             <form action="loginscript.php" method="post" enctype="multipart/form-data" class="col-lg-4 col-sm-6 col-md-4 needs-validation" novalidate>
                 <label class="form-label">Username</label>
-                <input type="text" class="form-control" required>
+                <input type="text" class="form-control" value="<?php if(isset($_POST['username'])){echo($_POST['username']);}?>" required>
                 <div class="invalid-feedback">Username is required</div>
                 <label class="form-label">Password</label>
-                <input type="password" class="form-control" required>
+                <input type="password" class="form-control" value="<?php if(isset($_POST['password'])){echo($_POST['password']);}?>" required>
                 <div class="invalid-feedback">Password is required</div>
                 <div class="row mt-2 p-3 flex-nowrap"><button type="submit" class="btn btn-primary col-3">Login</button><div class="col"></div><span class="alert col-8 align-self-center mb-0 py-2 pl-4 text-center"><a href="#"class="alert-link text-decoration-none">Forgot password?</a> or <a href="../SignUp/signup.php"class="alert-link text-decoration-none">Have no account yet?</a></span></div>
                 <?php

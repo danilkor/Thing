@@ -22,8 +22,8 @@
         exit();
     }
 
-    if(mb_strlen($username) < 5 || mb_strlen($username) > 90){
-        error("<b>Username</b> must contain from 5 to 90 characters!");
+    if(mb_strlen($username) < 5 || mb_strlen($username) > 90 || preg_match("/[^a-zA-Z0-9\-_]+/", $username)){
+        error("<b>Username</b> must contain from 5 to 90 characters and can only contain <b>a-z</b>, <b>A-Z</b>, <b>0-9</b>, <b>-</b>, <b>_</b>");
         header('Location: signup.php');
         exit();
     }
@@ -54,4 +54,4 @@
     $connect->close();
 
     $_SESSION['valid_feedback'] = '<div class="alert alert-success mt-3" role="alert">' . "Successfully signed up!<br> <strong>Log in</strong> to your account now:" . '</div>';
-    header('Location: ../Login/login.php');
+    header('refresh: 5;Location: ../Login/login.php');
