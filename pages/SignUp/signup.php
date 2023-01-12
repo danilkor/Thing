@@ -34,8 +34,8 @@
 
             <form class="col-lg-4 col-sm-6 col-md-4 needs-validation container" action="signupscript.php" method="post" enctype="multipart/form-data" novalidate>
 
-                <label for="usrname" class="form-label">Username</label>
-                <input id="usrname" type="text" class="form-control mb-3 has-validation" name="username" value="<?php if(isset($_POST['username'])){echo($_POST['username']);}?>" required>
+                <label for="username" class="form-label">Username</label>
+                <input id="username" type="text" class="form-control mb-3 has-validation" name="username" value="<?php if(isset($_POST['username'])){echo($_POST['username']);}?>" required>
                 <div class="invalid-feedback">Username is required</div>
 
                 <label class="form-label">E-mail</label>
@@ -43,7 +43,7 @@
                 <div class="form-text mb-3">Required for password recovery</div>
 
                 <label for="formFile" class="form-label">Your avatar</label><br>
-                <select name="icon" id="icon" class="" is="ms-dropdown">
+                <select name="avatar" id="avatar" class="" is="ms-dropdown">
                     <?php
                         for($i=1;$i < 51; $i++){
                         echo ('<option value="' . $i . '" data-image="../../img/avatars/'.$i.'.png"></option>"');

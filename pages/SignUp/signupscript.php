@@ -10,6 +10,7 @@
 
     $username = ($_POST['username']);
     $email = $_POST['email'];
+    $avatar = $_POST['avatar'];
     $password = $_POST['password'];
     $confirmPassword = $_POST['confirmPassword'];
     $regDate = date('Y-m-d H:i:s');
@@ -49,7 +50,7 @@
     }
 
 
-    $connect->query("INSERT INTO `users` (`username`, `email`, `password`, `regDate`) VALUES('$username', '$email', '$password', '$regDate')");
+    $connect->query("INSERT INTO `users` (`username`, `email`, `password`, `regDate`, `avatar`) VALUES('$username', '$email', '$password', '$regDate', '$avatar')");
     $connect->close();
 
     $_SESSION['valid_feedback'] = '<div class="alert alert-success mt-3" role="alert">' . "Successfully signed up!<br> <strong>Log in</strong> to your account now:" . '</div>';
