@@ -27,8 +27,9 @@
         header('Location: signup.php');
         exit();
     }
-
-    $password = md5("amogus".$password."suspectos"); //! Создаем хэш из пароля с "Солью"
+    
+    include_once('../../scripts/passwordHash.php');
+    $password = passHasher($password); // Создаем хэш из пароля с "Солью"
 
     $result1 = $connect->query("SELECT * FROM `users` WHERE `username` = '$username'"); //  Отправка запросов в БД
     if($email != ""){
