@@ -4,3 +4,4 @@
 /PgAdmin.php
 /scripts/connect.php
 /scripts/.htaccess
+scripts/passwordHash.php
