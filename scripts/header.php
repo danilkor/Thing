@@ -24,7 +24,22 @@
                 </div>
             ');
         } else if(isset($_COOKIE["username"])) {
-        echo ("Logined in");
+            echo('
+                <div class="col-md-3 text-end">
+                    <div class="dropdown text-end">
+                        <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="../../img/avatars'.$_COOKIE['avatar'].'" alt="mdo" width="32" height="32" class="rounded-circle">
+                        </a>
+                        <ul class="dropdown-menu text-small" style="">
+                            <li><a class="dropdown-item" href="#">lorem</a></li>
+                            <li><a class="dropdown-item" href="#">ispum</a></li>
+                            <li><a class="dropdown-item" href="#">dorem</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Sign out</a></li>
+                        </ul>
+                    </div>
+                </div>
+            ');
         }
     ?>
 </header>

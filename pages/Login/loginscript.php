@@ -29,8 +29,8 @@
             $dbpassword = $row['password'];
             $ava = $row['avatar'];
             if($password == $dbpassword){
-                setcookie('username', $username, time() + 800, '/','danilkor.bplaced.net');
-                setcookie('avatar', $ava, time() + 800, '/');
+                setcookie('username', $username, time() + 86400, '/','danilkor.bplaced.net');
+                setcookie('avatar', $ava, time() + 86400, '/');
                 echo ("Cookie");
             } else {
                 error('Wrong password');
