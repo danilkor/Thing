@@ -16,15 +16,15 @@
     </ul>
 
     <?php
-        if (!isset($_COOKIE["is_auth"]) && $pageName != "Login" && $pageName != "SignUp") { //Если сессия не существует и это не логин/регистр страница
+        if (!isset($_COOKIE["username"]) && $pageName != "Login" && $pageName != "SignUp") { //Если Куки не существует и это не логин/регистр страница
             echo('
                 <div class="col-md-3 text-end">
                 <a href="../Login/login.php" class="me-2"><button type="button" class="btn btn-outline-primary">Login</button></a>
                 <a href="../SignUp/signup.php"><button type="button" class="btn btn-primary">Sign-up</button></a>
                 </div>
             ');
-        } else if(isset($_COOKIE["is_auth"])) {
-
+        } else if(isset($_COOKIE["username"])) {
+        echo ("Logined in");
         }
     ?>
 </header>
