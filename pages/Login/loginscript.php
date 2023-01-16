@@ -14,7 +14,7 @@
     $username = $_POST['username'];
     $password = passHasher($_POST['password']);
 
-    $sql = "SELECT `password` FROM `users` WHERE `username` = '$username'";
+    $sql = "SELECT `password`, avatar FROM `users` WHERE `username` = '$username'";
     $result1 = $connect->query($sql);
     $connect->close();
 
@@ -27,8 +27,11 @@
     } else {
         foreach($result1 as $row){
             $dbpassword = $row['password'];
+            $ava = $row['avatar'];
             if($password == $dbpassword){
-                setcookie('is_auth', true, time() + 80);
+                setcookie('username', $username, time() + 800, '/','danilkor.bplaced.net');
+                setcookie('avatar', $ava, time() + 800, '/');
+                echo ("Cookie");
             } else {
                 error('Wrong password');
                 header('Location: login.php');
