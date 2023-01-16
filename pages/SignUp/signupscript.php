@@ -8,7 +8,7 @@
         $_SESSION['invalid_feedback'] = '<div class="row mb-4"><div class="col-lg-4 col-md-4 col-sm-3"></div><div class="alert alert-danger mt-3 col-lg-4 col-sm-6 col-md-4 text-center" role="alert">' . $text . '</div><div class="col-lg-4 col-md-4 col-sm-3"></div></div>';
     }
 
-    $username = ($_POST['username']);
+    $username = $_POST['username'];
     $email = $_POST['email'];
     $avatar = $_POST['avatar'];
     $password = $_POST['password'];
