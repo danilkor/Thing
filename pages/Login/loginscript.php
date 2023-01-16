@@ -5,7 +5,31 @@
     }
     
     include_once('../../scripts/connect.php');
+    include_once('../../scripts/passwordHash.php');
 
     if(!isset($_POST['username']) || !isset($_POST['password'])){
         header('Location: login.php');
     }
+
+    $username = $_POST['username'];
+    $password = passHasher($_POST['password']);
+
+$sql = "SELECT `password` FROM `users` WHERE `username` = '$username'";
+$result1 = $connect->query($sql);
+$user = $result1->fetch_assoc(); // Конвертируем в массив
+if (empty($user)) {
+    error('User with this name not found');
+    header('Location: login.php');
+    exit();
+} else {
+    foreach($result1 as $row){
+        $dbpassword = $row['password'];
+        if($password == $dbpassword){
+            setcookie('is_auth', true, time() + 80);
+        } else {
+            error('Wrong password');
+            header('Location: login.php');
+            exit();
+        }
+    }
+}
