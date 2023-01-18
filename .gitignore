@@ -6,3 +6,4 @@
 /scripts/.htaccess
 scripts/passwordHash.php
 .vscode/settings.json
+.vscode
