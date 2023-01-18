@@ -5,5 +5,7 @@
 /scripts/connect.php
 /scripts/.htaccess
 scripts/passwordHash.php
+scripts/hasher.php
 .vscode/settings.json
 .vscode
+scripts/hasher.php
