@@ -2,8 +2,9 @@
     session_start();
 
     if(!isset($_POST['username']) || !isset($_POST['email']) || !isset($_POST['password']) || !isset($_POST['confirmPassword'])){header('Location: signup.php');}
-
+    
     include_once('../../scripts/connect.php');
+    include_once('../../scripts/hasher.php');
     function error($text){
         $_SESSION['invalid_feedback'] = '<div class="row mb-4"><div class="col-lg-4 col-md-4 col-sm-3"></div><div class="alert alert-danger mt-3 col-lg-4 col-sm-6 col-md-4 text-center" role="alert">' . $text . '</div><div class="col-lg-4 col-md-4 col-sm-3"></div></div>';
     }
@@ -28,7 +29,6 @@
         exit();
     }
     
-    include_once('../../scripts/passwordHash.php');
     $password = passHasher($password); // Создаем хэш из пароля с "Солью"
 
     $result1 = $connect->query("SELECT * FROM `users` WHERE `username` = '$username'"); //  Отправка запросов в БД

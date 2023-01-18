@@ -5,7 +5,7 @@
     }
     
     include_once('../../scripts/connect.php');
-    include_once('../../scripts/passwordHash.php');
+    include_once('../../scripts/hasher.php');
 
     if(!isset($_POST['username']) || !isset($_POST['password'])){
         header('Location: login.php');
