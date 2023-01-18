@@ -5,3 +5,4 @@
 /scripts/connect.php
 /scripts/.htaccess
 scripts/passwordHash.php
+.vscode/settings.json
