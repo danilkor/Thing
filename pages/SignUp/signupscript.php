@@ -31,9 +31,9 @@
     
     $password = passHasher($password); // Создаем хэш из пароля с "Солью"
 
-    $result1 = $connect->query("SELECT * FROM `users` WHERE `username` = '$username'"); //  Отправка запросов в БД
+    $result1 = $connect->query("SELECT * FROM `users` WHERE `username` = ?s", $username); //  Отправка запросов в БД
     if($email != ""){
-        $result2 = $connect->query("SELECT * FROM `users` WHERE `email` = '$email'");
+        $result2 = $connect->query("SELECT * FROM `users` WHERE `email` = ?s", $email);
     }
 
     $user1 = $result1->fetch_assoc(); // Конвертируем в массив
@@ -51,8 +51,7 @@
     }
 
 
-    $connect->query("INSERT INTO `users` (`username`, `email`, `password`, `regDate`, `avatar`) VALUES('$username', '$email', '$password', '$regDate', '$avatar')");
-    $connect->close();
+    $connect->query("INSERT INTO `users` (`username`, `email`, `password`, `regDate`, `avatar`) VALUES(?s, ?s, ?s, ?s, ?i)", $username, $email, $password, $regDate, $avatar);
 
     $_SESSION['valid_feedback'] = '<div class="row mb-4"><div class="col-lg-4 col-md-4 col-sm-3"></div><div class="alert alert-success col-lg-4 col-sm-6 col-md-4 text-center" role="alert">Successfully signed up!<br> <strong>Log in</strong> to your account now</div><div class="col-lg-4 col-md-4 col-sm-3"></div></div>';
     header('Location: ../Login/login.php');

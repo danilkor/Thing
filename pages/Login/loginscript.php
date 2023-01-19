@@ -14,9 +14,8 @@
     $username = $_POST['username'];
     $password = passHasher($_POST['password']);
 
-    $sql = "SELECT `password`, avatar FROM `users` WHERE `username` = '$username'";
-    $result1 = $connect->query($sql);
-    $connect->close();
+    
+    $result1 = $connect->query("SELECT `password`, avatar FROM `users` WHERE `username` = ?s", $username);;
 
     $user = $result1->fetch_assoc(); // Конвертируем в массив
 

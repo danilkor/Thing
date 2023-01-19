@@ -73,7 +73,7 @@ foreach ($result as $row) {
 
     $colCounter++;
 
-    $result2 = $connect->query("SELECT avatar FROM users WHERE username = '" . $creator."'");
+    $result2 = $connect->query("SELECT avatar FROM users WHERE username = ?s", $creator);
     foreach ($result2 as $row) {
         $avId = $row["avatar"];
     }

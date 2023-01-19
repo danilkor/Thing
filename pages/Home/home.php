@@ -27,7 +27,6 @@
                     <?php
                         $factId = 1;
                         include("../../scripts/factsGenerator.php");
-                        $connect->close();
                     ?>
         </div>
     </div>
