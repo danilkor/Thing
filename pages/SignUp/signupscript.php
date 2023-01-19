@@ -12,6 +12,8 @@
     $username = $_POST['username'];
     $email = $_POST['email'];
     $avatar = $_POST['avatar'];
+    if ($avatar > 50) {
+    error("<b>Stop cheating ;_</b>");}
     $password = $_POST['password'];
     $confirmPassword = $_POST['confirmPassword'];
     $regDate = date('Y-m-d H:i:s');
