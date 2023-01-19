@@ -15,9 +15,9 @@
 
     if ($avatar > 50) {
         error("<b>Stop cheating ;_</b>");
-        header("Location: sign.up");
+        header("Location: signup.php");
     }
-    
+
     $password = $_POST['password'];
     $confirmPassword = $_POST['confirmPassword'];
     $regDate = date('Y-m-d H:i:s');
