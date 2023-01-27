@@ -3,8 +3,8 @@
     ?>
     
     <!-- * HEADER -->
-<header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-    <?php if($pageName != "Login" && $pageName != "SignUp"){echo(' <div class="col-md-3"></div>');}?>
+<header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 py-md-0 mb-4 border-bottom">
+    <?php if($pageName != "Login" && $pageName != "SignUp"){echo(' <div class="col-md-3"><a href="#"><img src="../../img/icon/T.png" alt="Thing" class="text-primary" width="80px"></a></div>');}?>
     
     <ul class="nav col-12 <?php if($pageName != "Login" && $pageName != "SignUp"){echo(' col-md-auto ');}?> mb-2 justify-content-center mb-md-0">
     <li><div class="hover-overlay"><div class="mask" style="background-color: rgba(251, 251, 251, 0.2)"></div></div>
