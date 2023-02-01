@@ -24,22 +24,27 @@ header("Location: ../Home/home.php");
 
 </head>
 <body>
-        <!--  Форма регистрации -->
+        <!-- header -->
+    <div class="container">
+        <?php
+            require_once('../../scripts/header.php')
+        ?>
+    </div>
+
 
     <div class="container-fluid">
-        <?php require_once("../../scripts/header.php")?>
         <?php
-                    if(isset($_SESSION['invalid_feedback'])){
-                        echo $_SESSION['invalid_feedback'];
-                        unset($_SESSION['invalid_feedback']);
-                    }
-                ?>
+            if(isset($_SESSION['invalid_feedback'])){
+                echo $_SESSION['invalid_feedback'];
+                unset($_SESSION['invalid_feedback']);
+            }
+        ?>
+
         <h1 class="w-100 text-center">Sign-up</h1>
+
         <div class="row">
             <div class="col-lg-4 col-md-4 col-sm-3"></div>
-
             <!--  Form Begins -->
-
             <form class="col-lg-4 col-sm-6 col-md-4 needs-validation container" action="signupscript.php" method="post" enctype="multipart/form-data" novalidate>
 
                 <label for="username" class="form-label">Username</label>
