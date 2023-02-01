@@ -1,7 +1,9 @@
 <?php 
 if (!isset($_COOKIE["username"]))
+
+
 header("Location: ../Login/login.php");
-    session_start();
+session_start();
 
     $pageName = "SignUp";
 ?>

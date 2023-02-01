@@ -1,7 +1,7 @@
 <?php
-if (isset($_COOKIE["username"]))
-    header("Location: ../Home/home.php");
-session_start();
+    if (isset($_COOKIE["username"]))
+        header("Location: ../Home/home.php");
+    session_start();
     $pageName = "Login";
 
 ?>

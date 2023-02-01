@@ -1,5 +1,10 @@
-    <?php    
-
+    <?php
+        if (isset($_COOKIE["username"])) {
+            $result1 = $connect->query('SELECT avatar FROM `users` WHERE `username` = ?s', $_COOKIE["username"]);
+            foreach($result1 as $row) {
+                $_SESSION["avatar"] = $row["avatar"];
+            }
+        }
     ?>
     
     <!-- * HEADER -->
@@ -29,12 +34,12 @@
                 <div class="col-md-8"></div>
                 <div class="dropdown text-end col-md-4">
                     <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="../../img/avatars/'.$_COOKIE['avatar'].'.png" alt="YOU" width="44" height="44" class="rounded-circle">
+                        <img src="../../img/avatars/'.$_SESSION["avatar"].'.png" alt="YOU" width="44" height="44" class="rounded-circle">
                     </a>
                     <ul class="dropdown-menu text-small">
                         <li><a class="dropdown-item" href="#">My profile</a></li>
                         <li><a class="dropdown-item" href="#">Add a fact</a></li>
-                        <li><a class="dropdown-item" href="#">dorem</a></li>
+                        <li><a class="dropdown-item" href="https://patreon.com/user?u=80446876">Support us</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="../SignOut/signout.php">Sign out</a></li>
                     </ul>

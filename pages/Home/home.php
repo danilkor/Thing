@@ -2,10 +2,10 @@
     session_start();
     $pageName = "Home";
     $factsOnOnePage = 50;
-
-
+    
     include_once("../../scripts/connect.php");
     include_once("../../scripts/timeRecreatorScript.php");
+    include_once("../../scripts/logincheck.php");
 ?>
 
 <!DOCTYPE html>
