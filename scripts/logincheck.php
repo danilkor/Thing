@@ -4,9 +4,7 @@
     }
 
 
-    if(!isset($_COOKIE["username"])){
-        header('Location: ../pages/Home/home.php');
-    } else {
+    if(isset($_COOKIE["username"])){
         $result1 = $connect->query("SELECT `hash` FROM `users` WHERE `username` = ?s", $_COOKIE["username"]);
         foreach($result1 as $row){
             $dbhahs = $row["hash"];
@@ -17,6 +15,11 @@
                     header('Location: ../Login/login.php');
                     exit();
                 }
+            } else {
+                setcookie("username", "", time() - 3600, "/","danilkor.bplaced.net");
+                setcookie("avatar","", time() - 3600, "/","danilkor.bplaced.net");
+                header('Location: ../Login/login.php');
+                exit();
             }
         }
     }

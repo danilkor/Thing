@@ -1,9 +1,10 @@
 <?php
-    if (isset($_COOKIE["username"]))
-        header("Location: ../Home/home.php");
+    
     session_start();
+    if (isset($_SESSION["is_auth"]))
+        header("Location: ../Home/home.php");
     $pageName = "Login";
-
+    include_once("../../scripts/connect.php");
 ?>
 
 

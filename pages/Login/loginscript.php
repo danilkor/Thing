@@ -29,6 +29,7 @@
             if($password == $dbpassword){
                 setcookie('username', $username, time() + 86400, '/','danilkor.bplaced.net');
                 setcookie('hash', $hash, time() + 86400, '/', 'danilkor.bplaced.net');
+                $_SESSION["is_auth"] = true;
             } else {
                 error('Wrong password');
                 header('Location: login.php');

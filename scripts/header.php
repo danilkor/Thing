@@ -41,7 +41,7 @@
                         <li><a class="dropdown-item" href="#">Add a fact</a></li>
                         <li><a class="dropdown-item" href="https://patreon.com/user?u=80446876">Support us</a></li>
                         <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="../SignOut/signout.php">Sign out</a></li>
+                        <li><a class="dropdown-item" href="../../signout.php">Sign out</a></li>
                     </ul>
                 </div>
             </div>
