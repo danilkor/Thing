@@ -11,3 +11,5 @@ There is nothing interesting on his page, it's only for Me ;)
 # SUPPORT US
 
  - Patreon <a href="patreon.com/user?u=80446876">Go to patreon</a>
+
+ <!-- ! don't forgot to remove error output, or make logs -->

@@ -1,10 +1,5 @@
     <?php
-        if (isset($_COOKIE["username"])) {
-            $result1 = $connect->query('SELECT avatar FROM `users` WHERE `username` = ?s', $_COOKIE["username"]);
-            foreach($result1 as $row) {
-                $_SESSION["avatar"] = $row["avatar"];
-            }
-        }
+        
     ?>
     
     <!-- * HEADER -->
@@ -20,21 +15,21 @@
     </ul>
 
     <?php
-        if (!isset($_COOKIE["username"]) && $pageName != "Login" && $pageName != "SignUp") { //Если Куки не существует и это не логин/регистр страница
+        if (!isset($_SESSION["is_auth"]) || $_SESSION["is_auth"] == false) { //if not authorised
             echo('
                 <div class="col-md-3 text-end py-3">
                 <a href="../Login/login.php" class="me-2"><button type="button" class="btn btn-outline-primary">Login</button></a>
                 <a href="../SignUp/signup.php"><button type="button" class="btn btn-primary">Sign-up</button></a>
                 </div>
             ');
-        } else if(isset($_COOKIE["username"])) {
+        } else if($_SESSION["is_auth"]) {
             echo('
             <div class="col-md-3 text-end py-3">
             <div class="row">
                 <div class="col-md-8"></div>
                 <div class="dropdown text-end col-md-4">
                     <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="../../img/avatars/'.$_SESSION["avatar"].'.png" alt="YOU" width="44" height="44" class="rounded-circle">
+                        <img src="../../img/avatars/'.$_COOKIE["avatar"].'.png" alt="YOU" width="44" height="44" class="rounded-circle">
                     </a>
                     <ul class="dropdown-menu text-small">
                         <li><a class="dropdown-item" href="#">My profile</a></li>
