@@ -1,6 +1,10 @@
 <?php 
-if (isset($_COOKIE["username"]))
-header("Location: ../Home/home.php");
+if (isset($_SESSION["is_auth"])){
+    if($_SESSION["is_auth"] == true){
+        header("Location: ../Home/home.php");
+        exit();
+    }
+}
     session_start();
 
     $pageName = "SignUp";

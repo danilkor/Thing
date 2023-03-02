@@ -33,6 +33,7 @@ function getRandRowsSQL($table_name, $key_name, $real_count, $count)
     return $sql;
 }
 
+//Генерирует запрос в базу данных учитывая занятые id 
 function sqlFromStart($ids, $count){
     $sql = "SELECT imgName, content, creator, creationDate FROM facts WHERE ";
     // var_dump($ids);
@@ -63,7 +64,7 @@ $sql = sqlFromStart($ids, $factsOnOnePage);
 // echo ($sql);
 
 $result = $connect->query($sql);
-
+// Выводит факты на страницу
 $colCounter = 0;
 foreach ($result as $row) {
     $imgName = $row["imgName"];
@@ -98,7 +99,7 @@ foreach ($result as $row) {
             </div>
         </div>
     ');
-    if($colCounter%10 == 0){
+    if($colCounter%10 == 0){ // По 10 фактов в столбце. 100% тут будут баги )
         echo('</>');
         if($colCounter + 1 != count($result && $colCounter + 1 < $factsOnOnePage)){
             echo('<div class="col">');
