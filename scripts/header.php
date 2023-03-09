@@ -22,7 +22,7 @@
                 <a href="../SignUp/signup.php"><button type="button" class="btn btn-primary">Sign-up</button></a>
                 </div>
             ');
-        } else if($_SESSION["is_auth"]) {
+        } else if($_SESSION["is_auth"] == true) {
             echo('
             <div class="col-md-3 text-end py-3">
             <div class="row">
