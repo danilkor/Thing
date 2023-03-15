@@ -115,12 +115,12 @@
                   </div>
                 </div>
                 
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <button class="carousel-control-prev type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon bg-black rounded-5 w-50 h-25"" aria-hidden="true"></span>
                   <span class="visually-hidden">Previous</span>
                 </button>
                 <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                  <span class="carousel-control-next-icon border-1" aria-hidden="true"></span>
+                  <span class="carousel-control-next-icon bg-black rounded-5 w-50 h-25" aria-hidden="true"></span>
                   <span class="visually-hidden">Next</span>
                 </button>
               </div>
@@ -153,12 +153,12 @@
 
 
         <!-- // ! Facts generation -->
-        <!-- <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                     <?php
                         $factId = 1;
                         include("../../scripts/factsGenerator.php");
                     ?>
-        </div> -->
+        </div>
     </div>
 
 

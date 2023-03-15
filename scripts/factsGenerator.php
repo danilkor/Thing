@@ -66,7 +66,9 @@ $sql = sqlFromStart($ids, $factsOnOnePage);
 $result = $connect->query($sql);
 // Выводит факты на страницу
 $colCounter = 0;
+$idAmount = 0;
 foreach ($result as $row) {
+    $idAmount++;
     $imgName = $row["imgName"];
     $content = $row["content"];
     $creator = $row["creator"];
@@ -75,6 +77,7 @@ foreach ($result as $row) {
     $colCounter++;
 
     $result2 = $connect->query("SELECT avatar FROM users WHERE username = ?s", $creator);
+    $avId = 1;
     foreach ($result2 as $row) {
         $avId = $row["avatar"];
     }
@@ -85,13 +88,13 @@ foreach ($result as $row) {
                 <div class="card-body">
                     <p class="card-text">'.$content.'</p>
                     <div class="justify-content-between align-items-center">
-                        <span class="row">
+                        <span class="row p-0">
                             <span class="col-9">
                                 <small class="text-muted">Posted by <strong>'.$creator.'</strong></small><br>
                                 <small class="text-muted">'.new_time(strtotime($creationDate)).'</small>
                             </span>
                             <span class="col-3">
-                                <img src="../../img/avatars.'.$avId.'.png">
+                                <img src="../../img/avatars/'.$avId.'.png" style="max-width: 70px;">
                             </span>
                         </span>
                     </div>
@@ -99,12 +102,12 @@ foreach ($result as $row) {
             </div>
         </div>
     ');
-    if($colCounter%10 == 0){ // По 10 фактов в столбце. 100% тут будут баги )
-        echo('</>');
-        if($colCounter + 1 != count($result && $colCounter + 1 < $factsOnOnePage)){
-            echo('<div class="col">');
-        }
-    }
+    // if($colCounter%10 == 0){ // По 10 фактов в столбце. 100% тут будут баги )
+    //     echo('</>');
+    //     if($colCounter + 1 != $idAmount && $colCounter + 1 < $factsOnOnePage){
+    //         echo('<div class="col">');
+    //     }
+    // }
     if($colCounter + 1 >= $factsOnOnePage){
         break;
     }

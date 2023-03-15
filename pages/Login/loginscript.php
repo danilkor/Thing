@@ -12,7 +12,7 @@
 
     $username = $_POST['username'];
     $password = passHasher($_POST['password']);
-    $hash = loginHasher(date('d/Y m'));
+    $hash = loginHasher(date('d/Y-m-s'));
     $connect->query("UPDATE `users` SET `hash`=?s WHERE `username` = ?s", $hash, $username);
     $result1 = $connect->query("SELECT `password`, avatar FROM `users` WHERE `username` = ?s", $username);
     
