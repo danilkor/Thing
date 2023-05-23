@@ -153,12 +153,12 @@
 
 
         <!-- // ! Facts generation -->
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <!-- <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                     <?php
                         $factId = 1;
                         include("../../scripts/factsGenerator.php");
                     ?>
-        </div>
+        </div> -->
     </div>
 
 

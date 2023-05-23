@@ -32,7 +32,7 @@
                 setcookie('avatar', $ava, time() + 86400, '/');
                 $_SESSION["is_auth"] = true;
             } else {
-                error('Wrong password');
+                error('Wrong password, <b>'.$username."</b> ");
                 header('Location: login.php');
                 exit();
             }
